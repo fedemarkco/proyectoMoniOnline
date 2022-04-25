@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Eliminar Préstamo
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-4">
+            <h2 class="pb-3">Eliminar Préstamo</h2>
+            <form action="/eliminar/{{idP}}" method="post">
+                {% csrf_token %}
+                ¿Está seguro de que desea eliminar el pedido del préstamo de {{nomApe}}?
+                <div class="pt-5">
+                    <input type="submit" class="btn btn-danger" value="Sí, estoy seguro">
+                    <a href="/listarPedidos/" class="btn btn-secondary">No, llévame de regreso</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

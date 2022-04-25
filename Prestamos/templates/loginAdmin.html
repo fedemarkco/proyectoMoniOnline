@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h2 class="pb-3">Login</h2>
+            <form action="/loginView/" method="post">
+                {% csrf_token %}
+                <p>
+                    <label for="id_usuario">Usuario:</label>
+                    <input type="text" name="username" class="form-control" required="" maxlength="50" id="id_username">
+                </p>
+                <p>
+                    <label for="id_password">Contraseña:</label>
+                    <input type="password" name="password" class="form-control" required="" maxlength="50" id="id_password">
+                </p>
+                <input type="submit" class="btn btn-primary" value="Enviar">
+                {% if "mensajeError" %}
+                    <div class="resp respPad">{{mensajeError}}</div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

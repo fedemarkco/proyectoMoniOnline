@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Respuesta a la Consulta del Préstamo
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-4">
+            <h2 class="pb-4">Respuesta la Consulta del Préstamo</h2>
+            {% if response.has_error %}
+                <div>No fue posible procesar su solicitud, reintente nuevamente, por favor.</div>
+            {% else %}
+                <div>El pedido para su solicitud del préstamo fue <span class="resp">{{response.status.upper}}</span></div>
+            {% endif %}
+            <div class="pt-5">
+                <a href="/">
+                    <input type="button" value="Realizar una nueva Consulta">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

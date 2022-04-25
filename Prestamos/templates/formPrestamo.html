@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+Consultar Préstamo
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h2 class="p-5">Consultar Préstamo</h2>
+            <form action="/" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="Solicitar Préstamo">
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

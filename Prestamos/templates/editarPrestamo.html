@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Consultar Préstamo
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h2 class="p-5">Editar Préstamo</h2>
+            <form action="/editar/{{idP}}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" class="btn btn-primary" value="Editar Préstamo">
+                <a href="/listarPedidos/" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

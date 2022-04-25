@@ -1,0 +1,16 @@
+.errorlist {
+    list-style-type: none;
+    color: red;
+}
+
+.resp {
+    color: red;
+}
+
+.respPad {
+    padding-top: 10px;
+}
+
+td i {
+    cursor: pointer;
+}
